@@ -34,9 +34,10 @@ def file_make():
     :rtype: object
     """
 
-    cwd = os.getcwd()
+    cwd = Path(os.getcwd())
 
-    target_path = Path(cwd) / 'scss'
+    target_path = cwd / 'scss'
+
     while not target_path.exists():
         target_path.mkdir()
 
