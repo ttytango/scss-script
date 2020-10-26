@@ -1,11 +1,10 @@
 import os
 from pathlib import Path
 
-from directories import scss, dir_dict
+from directories import dir_dict
 from write_files import remove_affix
 
-
-main_dir = scss
+main_dir = "scss"
 root_dir = Path("scss")
 main_dir_names = dir_dict.keys()
 
@@ -14,20 +13,21 @@ main_file = "main.scss"
 
 def main():
     for dir_name in main_dir_names:
-        dir = root_dir / dir_name
+        new_dir = root_dir / dir_name
 
         try:
-            dir.mkdir(parents=True)
-            print("Directory ", dir, " created")
+            new_dir.mkdir(parents=True)
+            print("Directory ", new_dir, " created")
         except FileExistsError:
-            print("Directory ", dir, "already exists")
+            print("Directory ", new_dir, "already exists")
 
-            if not dir.exists():
-                dir.mkdir()
+            if not new_dir.exists():
+                new_dir.mkdir()
 
-                print("Directory ", dir, " Created ")
+                print("Directory ", new_dir, " Created ")
             else:
-                print("Directory ", dir, " already exists")
+                print("Directory ", new_dir, " already exists")
+
 
 def file_make():
     """
@@ -56,30 +56,6 @@ def file_make():
 
         import_statement += "\n"
     filename = root_dir / main_file
-
-
-
-
-
-    # import_statement = '@import "' + main_dir_names[0] + '/' + remove_affix(abstracts[0], abstracts) + '";\n' + \
-    #                    '@import "' + main_dir_names[0] + '/' + remove_affix(abstracts[1], abstracts) + '";\n' + \
-    #                    '@import "' + main_dir_names[0] + '/' + remove_affix(abstracts[2], abstracts) + '";\n\n' + \
-    #                    '@import "' + main_dir_names[1] + '/' + remove_affix(base[0], base) + '";\n' + \
-    #                    '@import "' + main_dir_names[1] + '/' + remove_affix(base[1], base) + '";\n' + \
-    #                    '@import "' + main_dir_names[1] + '/' + remove_affix(base[2], base) + '";\n' + \
-    #                    '@import "' + main_dir_names[1] + '/' + remove_affix(base[3], base) + '";\n\n' + \
-    #                    '@import "' + main_dir_names[2] + '/' + remove_affix(components[0], components) + '";\n' + \
-    #                    '@import "' + main_dir_names[2] + '/' + remove_affix(components[1], components) + '";\n' + \
-    #                    '@import "' + main_dir_names[2] + '/' + remove_affix(components[2], components) + '";\n' + \
-    #                    '@import "' + main_dir_names[2] + '/' + remove_affix(components[3], components) + '";\n\n' + \
-    #                    '@import "' + main_dir_names[3] + '/' + remove_affix(layouts[0], layouts) + '";\n' + \
-    #                    '@import "' + main_dir_names[3] + '/' + remove_affix(layouts[1], layouts) + '";\n' + \
-    #                    '@import "' + main_dir_names[3] + '/' + remove_affix(layouts[2], layouts) + '";\n' + \
-    #                    '@import "' + main_dir_names[3] + '/' + remove_affix(layouts[3], layouts) + '";\n' + \
-    #                    '@import "' + main_dir_names[3] + '/' + remove_affix(layouts[4], layouts) + '";\n\n' + \
-    #                    '@import "' + main_dir_names[4] + '/' + remove_affix(pages[0], pages) + '";\n' + \
-    #                    '@import "' + main_dir_names[4] + '/' + remove_affix(pages[1], pages) + '";\n' + \
-    #                    '@import "' + main_dir_names[4] + '/' + remove_affix(pages[2], pages) + '";\n'
 
     with open(filename, "w") as f:
         f.writelines(import_statement)
