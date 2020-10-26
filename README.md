@@ -9,7 +9,7 @@ Once inside there will be a new folder named scss-script.
 Open this folder and run main.py in the terminal (often by right clicking on it and pressing run presuming you have python installed, and it will automatically create an scss folder structure in the project directory, with partials and a main.scss file automatically created for you.
 The files that are created will automatically be imported with an @import statement into the main.scss that is created upon running the script.
 
-# This is meant as a one-shot script to run at the beginning of the project, but the project has just been edited so that the files that are there already should not be overwritten. However, it could cause issues with the import statements if run twice.
+### This is meant as a one-shot script to run at the beginning of the project, but the project has just been edited so that the files that are there already should not be overwritten. However, it could cause issues with the import statements if run twice.
 
 Upon creation of the scss files you can delete the entire scss-script folder from your project.
 
