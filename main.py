@@ -49,7 +49,7 @@ def file_make():
             import_statement += f'@import "{name}/'
             file_path = dir_path / file
 
-            with open(file_path, "w") as file_handle:
+            with open(file_path, "a") as file_handle:
                 file_handle.write("")
 
             import_statement += f'{remove_affix(file)}";\n'
@@ -57,7 +57,7 @@ def file_make():
         import_statement += "\n"
     filename = root_dir / main_file
 
-    with open(filename, "w") as f:
+    with open(filename, "a") as f:
         f.writelines(import_statement)
 
 
