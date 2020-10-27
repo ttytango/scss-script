@@ -6,7 +6,8 @@ This is made using python 3.8.4 but works with the new python 3.9
 
 Simply clone this repo into the root directory of your project and open up your root directory.
 Once inside there will be a new folder named scss-script.
-Open this folder and run main.py in the terminal (often by right clicking on it and pressing run presuming you have python installed, and it will automatically create an scss folder structure in the project directory, with partials and a main.scss file automatically created for you.
+Open this folder and run main.py (often by right clicking on it and pressing run in your IDE presuming you have python >= 3.8.4 and have a default interpreter path in your IDE settings (which is usually handled automatically when downloading python or a python extension, for example in VS code).
+Running main.py will automatically create an scss folder structure in the project directory, with partials and a main.scss file automatically created for you.
 The files that are created will automatically be imported with an @import statement into the main.scss that is created upon running the script.
 
 The script needs to be run from the root directory of the project/ or directory you would like to run it from, or it will create the scss folder in the wrong directory.
